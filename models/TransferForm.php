@@ -17,15 +17,16 @@ class TransferForm extends Model
 	public $addressFrom;
 	public $loyalty;
 	public $childChair;
-	public $countPassangers;
+	public $countPassengers;
 	public $name;
 	public $phone;
 	public $email;
+	public $cardNumber;
 
 	public function rules()
 	{
 		return [
-			[['name', 'phone', 'email'], 'require'],
+			[['name', 'phone', 'email'], 'required'],
 			[['loyalty'], 'number'],
 		];
 	}

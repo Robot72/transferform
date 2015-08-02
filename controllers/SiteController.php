@@ -55,10 +55,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $directions = Directions::find()->all();
         $transferForm = new TransferForm();
         $cards = LoyaltyCard::find()->all();
         return $this->render('index', [
             'cards' => $cards,
+            'directions' => $directions,
             'transfer' => $transferForm,
         ]);
     }

@@ -4,6 +4,6 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=TransferForm',
     'username' => 'root',
-    'password' => '',
+    'password' => 'annet2711',
     'charset' => 'utf8',
 ];
