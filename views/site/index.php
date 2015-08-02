@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 
@@ -24,6 +25,16 @@ $this->title = 'Transfer form';
 
             </div>
 
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+                <?= $form->field($transfer, 'loyalty')->dropDownList(ArrayHelper::map($cards, 'id', 'name')); ?>
+            </div>
         </div>
     <?php ActiveForm::end(); ?>
     </div>

@@ -8,6 +8,12 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Dependency;
+use app\models\Directions; 
+use app\models\PlaceDestination;
+use app\models\LoyaltyCard;
+use app\models\TypeCar;
+use app\models\TransferForm;
 
 class SiteController extends Controller
 {
@@ -49,7 +55,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        $transferForm = new TransferForm();
+        $cards = LoyaltyCard::find()->all();
+        return $this->render('index', [
+            'cards' => $cards,
+            'transfer' => $transferForm,
+        ]);
     }
 
     public function actionLogin()
